@@ -10,18 +10,18 @@ public class Symeon : MonoBehaviour
 	public bool grounded;
 	
 	private Rigidbody2D rb2d;
-	//private Animator anim;
+	private Animator anim;
 	
 	void Start()
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
-		//anim = gameObject.GetComponent<Animator>();
+		anim = gameObject.GetComponent<Animator>();
 	}
 	
 	void Update()
 	{
-		//anim.SetBool("Grounded", grounded);
-		//anim.SetFloat("Speed", Math.Abs(Input.GetAxis("Horizontal")));
+		anim.SetBool("Grounded", grounded);
+		anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 		
 		if(Input.GetAxis("Horizontal") < -0.1f)
 			transform.localScale = new Vector3(-1f, 1f, 1f);
